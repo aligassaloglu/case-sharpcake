@@ -1,14 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap');
+@import url("./fonts.scss");
 
 $primary-color: #050857;
+
+body{
+  font-family: 'Aestetico Formal';
+  color: white;
+}
 
 .application-layout{
   height: 100vh;
   max-height: 100vh;
+  width: 100%;
   display: flex;
+  .content{
+    width: 100%;
+  }
 }
 .navbar{
   height: calc((80/16)*1vw);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .sidebar{
@@ -25,10 +38,68 @@ $primary-color: #050857;
     flex-direction: column;
     gap: calc((48/16)*1vw);
     a{
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-family: 'Aestetico Formal ExtraBold';
+      font-size: calc((20/16)*1vw);
       display: block;
     }
   }
   .footer{
     padding-bottom: calc((18/16)*1vw);
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    .user{
+      display: flex;
+      height: calc((50/16)*1vw);
+      margin-bottom: calc((4/16)*1vw);
+      p{
+        margin: 0;
+      }
+      .user-info{
+        align-self: flex-end;
+        text-align: right;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: calc((12/16)*1vw);
+        margin-right: calc((4/16)*1vw);
+        .name-text{
+          font-family: 'Aestetico Formal ExtraBold';
+          font-size: calc((12/16)*1vw);
+        }
+        .email-text{
+          font-family: 'Aestetico Formal ExtraBold';
+          font-size: calc((8/16)*1vw);
+        }
+      }
+    }
+    .options{
+      display: flex;
+      flex-direction: column;
+      gap: calc((28/16)*1vw);
+      margin-top: calc((18/16)*1vw);
+      a{
+        text-align: center;
+        font-family: 'Aestetico Formal ExtraBold';
+        font-size: calc((20/16)*1vw);
+      }
+    }
+  }
+}
+
+.articles-tab{
+  padding: calc((22/16)*1vw) calc((16/16)*1vw);
+  .tab-header{
+    width: fit-content;
+    // margin-right: 5vw;
+    h2{
+      font-size: calc((32/16)*1vw);
+      width: fit-content;
+      color: $primary-color;
+      margin: 0 !important;
+    }
   }
 }
