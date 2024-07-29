@@ -1,8 +1,9 @@
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 export const Sidebar = () =>{
-
+  const location = useLocation()
+  console.log(location)
   const name = "John Doe"
   const email = "johndoe@gmail.com"
   const tabs = [
@@ -31,7 +32,7 @@ export const Sidebar = () =>{
   return <div className="sidebar">
     <div className="navigation">
       {tabs.map((item, index)=>(
-        <Link key={index} to={item.to}>{item.tabName}</Link>
+        <Link key={index} to={item.to} className={location.pathname === `/${item.to}` ? 'activeLink' : ''}>{item.tabName}</Link>
       ))}
     </div>
 

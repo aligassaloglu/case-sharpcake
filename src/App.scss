@@ -5,6 +5,10 @@ $primary-color: #050857;
 body{
   font-family: 'Aestetico Formal';
   color: white;
+  box-sizing: border-box;
+}
+div{
+  box-sizing: border-box;
 }
 
 .application-layout{
@@ -18,6 +22,7 @@ body{
 }
 .navbar{
   height: calc((80/16)*1vw);
+  padding: 0 calc((24/16)*1vw);
   width: 100%;
   display: flex;
   align-items: center;
@@ -92,9 +97,10 @@ body{
 
 .articles-tab{
   padding: calc((22/16)*1vw) calc((16/16)*1vw);
+  max-height: calc(100% - ((80 / 16) * 1vw));
+  overflow: scroll;
   .tab-header{
     width: fit-content;
-    // margin-right: 5vw;
     h2{
       font-size: calc((32/16)*1vw);
       width: fit-content;
@@ -102,4 +108,49 @@ body{
       margin: 0 !important;
     }
   }
+  .cards-layout{
+    padding-top: 1vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+    row-gap: 4vw;
+  }
+}
+
+.card-article{
+  width: calc((550/16)*1vw);
+  border-radius: calc((20/16)*1vw);
+  padding-bottom: 1vw;
+  color: $primary-color;
+  box-shadow: black 1px 1px 0;
+  .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h3{
+    font-family: 'Aestetico Formal ExtraBold';
+    text-align: center;
+    max-width: calc((383/16)*1vw);
+    font-size: calc((25/16)*1vw);
+    width: fit-content;
+    color: $primary-color;
+    margin: 0 !important;
+  }
+  p{
+    font-family: 'Aestetico Formal ExtraBold';
+    max-width: calc((519/16)*1vw);
+    text-align: center;
+    font-size: calc((20/16)*1vw);
+  }
+  strong{
+    width: 100%;
+    font-family: 'Aestetico Formal ExtraBold';
+    text-align: right;
+    font-size: calc((20/16)*1vw); 
+  }
+}
+.activeLink{
+  text-decoration: underline !important;
 }
